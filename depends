@@ -1,0 +1,5 @@
+#include<QtCore>
+#include<QtCoreDepends>
+
+#define out qDebug()
+#define in QTextStream(stdin)
