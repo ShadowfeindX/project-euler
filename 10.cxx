@@ -7,8 +7,9 @@ uint64_t main() {
   for(int i = 3, prime = 1; i < 2000000; i++, prime = true) {
     for(int j = 0; j<primes.size() && primes[j]*primes[j] <= i && prime; j++)
       if(i % primes[j] == 0) prime = false;
-      if(prime) primes.push_back(i);
-  } foreach (int prime, primes) {
-    sum += prime;
+      if(prime) {
+        primes.push_back(i);
+        sum += i;
+      }
   } return sum;
 }
