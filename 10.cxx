@@ -1,5 +1,14 @@
 #include <depends>
 
-int main() {
-  for (int a, b, c, j = 2, n = 2; j < 1000; j += 2, n = (j*j)/2) for (int i = 1, k = round(sqrt(n)); i < k; i++) if (n%i == 0) if ((c = (j + i) + (b = (a = j + i) + (n/i) - i) - j) + b + a == 1000 && c > b && b > a) return a*b*c;
+uint64_t main() {
+  uint64_t sum = 0;
+  QVector<int> primes;
+  primes.push_back(2);
+  for(int i = 3, prime = 1; i < 2000000; i++, prime = true) {
+    for(int j = 0; j<primes.size() && primes[j]*primes[j] <= i && prime; j++)
+      if(i % primes[j] == 0) prime = false;
+      if(prime) primes.push_back(i);
+  } foreach (int prime, primes) {
+    sum += prime;
+  } return sum;
 }
