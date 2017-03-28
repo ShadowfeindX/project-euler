@@ -11,5 +11,5 @@ uint64_t main() {
         primes.push_back(i);
         sum += i;
       }
-  } return sum;
+  } return sum+2;
 }
