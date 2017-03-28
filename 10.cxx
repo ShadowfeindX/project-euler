@@ -1,7 +1,6 @@
 #include <depends>
-
 uint64_t main() {
-  uint64_t sum = 0;
+  uint64_t sum = 2;
   QVector<int> primes;
   primes.push_back(2);
   for(int i = 3, prime = 1; i < 2000000; i++, prime = true) {
@@ -11,5 +10,5 @@ uint64_t main() {
         primes.push_back(i);
         sum += i;
       }
-  } return sum+2;
+  } return sum;
 }
